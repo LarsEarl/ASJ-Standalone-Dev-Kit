@@ -22,6 +22,22 @@ public class PointTest {
         assertEquals("Axis",new Point(0,-7).getQuadrant());
         assertEquals("Axis",new Point(12,0).getQuadrant());
         assertEquals("Axis",new Point(0,0).getQuadrant());
+    }
+   @Test
+    public void distanceToPoint(){
+    Point a =new Point(3,5);
+    Point b =new Point(6,9);
+    double actualDistance = a.distanceToPoint(b);
+    assertEquals(5,actualDistance,0.00001);
 
+   }
+
+
+    @Test
+    public void closestPoint() {
+        Point a = new Point(6,10);
+        Point[] points = {new Point(5,7),new Point(3,8),new Point(6,10),new Point(-2,7)};
+
+         assertEquals(points[2],a.closestPoint(points));
     }
 }
